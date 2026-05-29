@@ -9,8 +9,8 @@ deployment:
   replicas: 2
 
 image:
-  repository: amanraj/myntra-clone
-  tag: latest
+  repository: 3aman/myntra-frontend
+  tag: v1
 
 service:
   name: myntra-service
