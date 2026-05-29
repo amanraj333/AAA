@@ -1,0 +1,38 @@
+namespace:
+  name: myntra
+
+labels:
+  app: myntra-clone
+
+deployment:
+  name: myntra-deployment
+  replicas: 2
+
+image:
+  repository: amanraj/myntra-clone
+  tag: latest
+
+service:
+  name: myntra-service
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 30007
+
+configMap:
+  name: myntra-config
+  data:
+    APP_NAME: myntra-clone
+    ENV: production
+    PORT: "80"
+
+secret:
+  name: aman-secret
+  type: Opaque
+  data:
+    DB_User: QURNSU4=
+    DB_Pass: QW1hbjEyMw==
+
+volume:
+  name: myntra-volume
+  mountPath: /usr/share/nginx/html/data
