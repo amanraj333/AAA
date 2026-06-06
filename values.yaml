@@ -6,7 +6,7 @@ labels:
 
 deployment:
   name: myntra-deployment
-  replicas: 3
+  replicas: 2
 
 image:
   repository: 3aman/myntra-frontend
